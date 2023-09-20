@@ -1,10 +1,11 @@
 { inputs, outputs, ... }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    ./locales.nix
     ./nix.nix
     ./python.nix
     ./steam-hardware.nix
-    ./time.nix
+    ./timezone.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager.extraSpecialArgs = { inherit inputs outputs; };
