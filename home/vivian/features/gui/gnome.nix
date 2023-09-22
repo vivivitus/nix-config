@@ -51,5 +51,9 @@ in
     "org/gnome/nautilus/list-view" = {
       default-zoom-level = "small";
     };
+
+    "system/locale" = {
+      region = "de_CH.UTF-8";
+    };
   };
 }
