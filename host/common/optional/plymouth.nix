@@ -1,8 +1,9 @@
 {
   boot = {
     plymouth.enable = true;
-    kernelParams = [
-      "quiet"
-    ];
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+    kernelParams = [ "quiet" ];
+    loader.timeout = 0;
   };
 }

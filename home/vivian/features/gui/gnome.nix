@@ -56,5 +56,27 @@ in
     "system/locale" = {
       region = "de_CH.UTF-8";
     };
+
+    "org/gnome/desktop/app-folders" = {
+      folder-children = ["Utilities" "YaST" "Games" "KDEConnect" ];
+    };
+
+    "org/gnome/desktop/app-folders/folders/Games" = {
+      categories = [ "Game" ];
+      name = "Games";
+    };
+
+    "org/gnome/desktop/app-folders/folders/KDEConnect" = {
+      apps = [
+        "org.kde.kdeconnect.app.desktop"
+        "org.kde.kdeconnect.daemon.desktop"
+        "org.kde.kdeconnect.handler.desktop"
+        "org.kde.kdeconnect.nonplasma.desktop"
+        "org.kde.kdeconnect_open.desktop"
+        "org.kde.kdeconnect-settings.desktop"
+        "org.kde.kdeconnect.sms.desktop"
+      ];
+      name = "KDE Connect";
+    };
   };
 }

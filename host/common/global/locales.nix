@@ -1,7 +1,6 @@
 {
   console = {
     keyMap = "sg";
-    earlySetup = true;
   };
 
   i18n = {

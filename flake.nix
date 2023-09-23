@@ -6,7 +6,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
     sops-nix.url = "github:mic92/sops-nix";
-    #nil.url = "github:oxalica/nil#"
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -28,39 +27,39 @@
       packageArchitecture = nixpkgs.legacyPackages;
     in
     {
-      inherit lib;
+    inherit lib;
 
-      nixosModules = import ./modules/nixos;
-      homeManagerModules = import ./modules/home-manager;
-      
-      #packages = perArchitecture (pkgs: import ./pkgs { inherit pkgs; });
-      devShells = perArchitecture (pkgs: import ./shell.nix { inherit pkgs; });
-      #formatter = perArchitecture (pkgs: pkgs.nixpkgs-fmt);
+    nixosModules = import ./modules/nixos;
+    homeManagerModules = import ./modules/home-manager;
+    
+    #packages = perArchitecture (pkgs: import ./pkgs { inherit pkgs; });
+    devShells = perArchitecture (pkgs: import ./shell.nix { inherit pkgs; });
+    #formatter = perArchitecture (pkgs: pkgs.nixpkgs-fmt);
 
-      nixosConfigurations = {
-        vividesk = lib.nixosSystem {
-          modules = [ ./host/vividesk ];
-          specialArgs = { inherit inputs outputs; };
-        };
-
-        vivibook = lib.nixosSystem {
-          modules = [ ./host/vivibook ];
-          specialArgs = { inherit inputs outputs; };
-        };
+    nixosConfigurations = {
+      vividesk = lib.nixosSystem {
+        modules = [ ./host/vividesk ];
+        specialArgs = { inherit inputs outputs; };
       };
 
-      homeConfigurations = {
-        "vivian@vividesk" = lib.homeManagerConfiguration {
-          modules = [ ./home/vivian/vividesk.nix ];
-          pkgs = packageArchitecture.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-        };
-
-        "vivian@vivibook" = lib.homeManagerConfiguration {
-          modules = [ ./home/vivian/vivibook.nix ];
-          pkgs = packageArchitecture.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-        };
+      vivibook = lib.nixosSystem {
+        modules = [ ./host/vivibook ];
+        specialArgs = { inherit inputs outputs; };
       };
     };
+
+    homeConfigurations = {
+      "vivian@vividesk" = lib.homeManagerConfiguration {
+        modules = [ ./home/vivian/vividesk.nix ];
+        pkgs = packageArchitecture.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+
+      "vivian@vivibook" = lib.homeManagerConfiguration {
+        modules = [ ./home/vivian/vivibook.nix ];
+        pkgs = packageArchitecture.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+    };
+  };
 }

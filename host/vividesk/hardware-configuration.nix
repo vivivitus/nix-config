@@ -2,7 +2,7 @@
   imports =
     [];
 
-  boot = {
+  boot = {  
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "sd_mod" ];
       kernelModules = [ "amdgpu" "dm-snapshot" ];
@@ -10,9 +10,7 @@
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
     loader = {
-      systemd-boot = {
-        enable = true;
-      };
+      systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
   };
