@@ -36,8 +36,6 @@
     };
   };
 
-  hardware.opengl.driSupport32Bit = true;
-
   environment.sessionVariables = {
     STEAM_FORCE_DESKTOPUI_SCALING = "2";
   };

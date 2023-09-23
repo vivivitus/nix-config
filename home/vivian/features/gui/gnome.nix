@@ -52,6 +52,7 @@ in
       default-zoom-level = "small";
     };
 
+    # Swiss german formats like CHF, meters, etc.
     "system/locale" = {
       region = "de_CH.UTF-8";
     };

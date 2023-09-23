@@ -5,19 +5,20 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
-  boot.kernelParams = [ "i915.force_probe=a7a0" "i915.enable_guc=2" ];
+  boot = {
+    initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" ];
+    initrd.kernelModules = [ ];
+    initrd.luks.devices."root".device = "/dev/disk/by-uuid/fd20514c-b8b7-48ca-ac37-5f7460c8565f";
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
+    kernelParams = [ "i915.force_probe=a7a0" "i915.enable_guc=2" ];
+  };
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/1fadc7e9-a139-4580-b358-729ecf16d071";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" ];
     };
-
-  boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/fd20514c-b8b7-48ca-ac37-5f7460c8565f";
 
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/1fadc7e9-a139-4580-b358-729ecf16d071";
@@ -44,11 +45,8 @@
 
   swapDevices = [ { device = "/swap/swapfile"; }  ];
 
-  networking.useDHCP = lib.mkDefault true;
-
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  config.boot.kernelPackages.rtl8821cu
 }

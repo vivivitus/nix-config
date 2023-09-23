@@ -8,6 +8,7 @@
     ./gnome.nix
     ./gparted.nix
     ./telegram.nix
+    ./virt-manager.nix
   ];
 
   home.packages = with pkgs; [

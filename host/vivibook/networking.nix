@@ -1,5 +1,8 @@
+{ lib, ... }:
+
 {
   networking = {
+    useDHCP = lib.mkDefault true;
     hostName = "vivibook";
   };
 

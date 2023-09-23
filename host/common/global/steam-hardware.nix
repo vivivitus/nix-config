@@ -1,3 +1,6 @@
 {
-  hardware.steam-hardware.enable = true;
+  hardware = {
+    steam-hardware.enable = true;
+    opengl.driSupport32Bit = true;
+  };
 }

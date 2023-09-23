@@ -6,7 +6,9 @@ in
   users.users.vivian = {
     isNormalUser = true;
     extraGroups = [
-      "wheel" "wireshark"
+      "wheel"
+      "wireshark"
+      "libvirtd"
     ] ++ ifTheyExist [
       "deluge"
       # geht nicht hoi

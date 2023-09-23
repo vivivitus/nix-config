@@ -11,6 +11,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix
+    ../common/optional/virtualisation.nix
   ];
 
   system.stateVersion = "23.11";
