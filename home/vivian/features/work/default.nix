@@ -1,9 +1,14 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./evolution.nix
-    ./freecad.nix
     ./vscode.nix
-    ./kicad.nix
     ./wireshark.nix
+  ];
+
+  home.packages = with pkgs; [
+    freecad
+    kicad
   ];
 }

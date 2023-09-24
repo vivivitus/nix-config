@@ -1,7 +1,5 @@
-{ pkgs, ... }:
-
 {
-  home.packages = with pkgs; [
-    wireshark
-  ];
+  programs.firefox = {
+    enable = true;
+  };
 }

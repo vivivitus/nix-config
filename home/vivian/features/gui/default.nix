@@ -3,15 +3,15 @@
 {
   imports = [
     ./firefox.nix
-    ./discord.nix
-    ./etcher.nix
     ./gnome.nix
-    ./gparted.nix
-    ./telegram.nix
-    ./virt-manager.nix
+    ./virtmanager.nix
   ];
 
   home.packages = with pkgs; [
+    discord
     easyeffects
+    etcher
+    gparted
+    telegram-desktop
   ];
 }
