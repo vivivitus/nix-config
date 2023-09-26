@@ -9,6 +9,7 @@
     };
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
+    swraid.enable = true;
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -45,6 +46,7 @@
     };
 
   swapDevices = [ { device = "/swap/swapfile"; } ];
+
   nixpkgs.hostPlatform.system = "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = true;
 }

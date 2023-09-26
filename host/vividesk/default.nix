@@ -11,8 +11,8 @@
     ../common/optional/pipewire.nix
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix
-    ../common/optional/libvirt.nix
-    ../common/optional/waydroid.nix
+    ../common/virtualisation/libvirt.nix
+    ../common/virtualisation/bottles.nix
   ];
 
   system.stateVersion = "23.11";
