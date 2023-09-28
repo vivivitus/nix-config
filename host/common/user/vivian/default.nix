@@ -7,10 +7,13 @@ in
     isNormalUser = true;
     extraGroups = [
       "wheel"
-      "wireshark"
-      "libvirtd"
+      "network"
+      "video"
+      "audio"
     ] ++ ifTheyExist [
       "deluge"
+      "wireshark"
+      "libvirtd"
       # geht nicht hoi
     ];
 

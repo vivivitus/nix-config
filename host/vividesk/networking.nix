@@ -18,7 +18,15 @@ in {
 
       interface = ${wireless};
       metric = 200;
+
+      interface = admin;
+      metric = 999;
       '';
+
+    # defaultGateway = {
+    #   address = "10.0.2.1";
+    #   interface = "${wired}";
+    # };
 
     bridges = {
       ${bridge} = {
