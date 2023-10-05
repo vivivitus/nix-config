@@ -1,6 +1,7 @@
 { lib, ... }:
 
 {
+  services.resolved.enable = true;
   networking = {
     useDHCP = lib.mkDefault true;
     hostName = "vivibook";

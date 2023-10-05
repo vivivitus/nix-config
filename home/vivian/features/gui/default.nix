@@ -13,5 +13,6 @@
     etcher
     gparted
     telegram-desktop
+    spotify
   ];
 }

@@ -4,6 +4,7 @@ let
   bridge = "br0";
 in {
 
+  services.resolved.enable = true;
   networking = {
     hostName = "vividesk";
     useDHCP = false;
