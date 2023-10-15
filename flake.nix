@@ -39,7 +39,7 @@
     nixosConfigurations = {
       vividesk = lib.nixosSystem {
         modules = [ ./host/vividesk ];
-        specialArgs = { inherit inputs outputs; };
+        specialArgs = { inherit inputs outputs; }; # wenn das fehlt infinit loop?
       };
 
       vivibook = lib.nixosSystem {
