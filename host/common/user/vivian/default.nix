@@ -10,6 +10,8 @@ in
       "network"
       "video"
       "audio"
+      "lp"
+      "scanner"
     ] ++ ifTheyExist [
       "deluge"
       "wireshark"
