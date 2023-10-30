@@ -22,14 +22,14 @@
     kernelParams = [ "iomem=relaxed" ];
   };
 
-  services.undervolt = {
-    enable = true;
-    verbose = true;
-    uncoreOffset = -40;
-    coreOffset = -40;
-    gpuOffset= -40;
-    analogioOffset = -40;
-  };
+  # services.undervolt = {
+  #   enable = true;
+  #   verbose = true;
+  #   uncoreOffset = -40;
+  #   coreOffset = -40;
+  #   gpuOffset= -40;
+  #   analogioOffset = -40;
+  # };
 
   services = {
     

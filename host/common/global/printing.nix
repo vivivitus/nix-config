@@ -31,7 +31,7 @@
       brscan4 = {
         enable = true;
         netDevices = {
-          home = { model = "DCP-7065DN"; ip = "10.0.2.30"; };
+          DCP-7065DN = { model = "DCP-7065DN"; ip = "10.0.2.30"; };
         };
       };
     };
