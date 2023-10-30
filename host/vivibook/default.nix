@@ -18,7 +18,17 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [ "iomem=relaxed" ];
+  };
+
+  services.undervolt = {
+    enable = true;
+    verbose = true;
+    uncoreOffset = -40;
+    coreOffset = -40;
+    gpuOffset= -40;
+    analogioOffset = -40;
   };
 
   services = {
