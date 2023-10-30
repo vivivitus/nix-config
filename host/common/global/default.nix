@@ -3,6 +3,7 @@
     inputs.home-manager.nixosModules.home-manager
     ./locales.nix
     ./nix.nix
+    ./printing.nix
     ./python.nix
     ./steam-hardware.nix
     ./timezone.nix
@@ -17,4 +18,6 @@
     };
   };
   hardware.enableRedistributableFirmware = true;
+
+  
 }

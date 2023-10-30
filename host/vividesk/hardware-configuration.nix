@@ -9,7 +9,14 @@
     };
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
-    swraid.enable = true;
+    swraid = {
+      enable = true;
+      mdadmConf = ''
+        DEVICE partitions
+        MAILADDR vivian@vivi.land
+        ARRAY /dev/md/data metadata=1.2 name=vividesk:data UUID=c7ca0418:4c1ba1e5:70133e1c:3fe6a572
+      '';
+    };
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
@@ -46,6 +53,12 @@
     };
 
   swapDevices = [ { device = "/swap/swapfile"; } ];
+
+  fileSystems."/home/vivian/Archive" =
+    { device = "/dev/disk/by-uuid/6c40eb20-2aaf-4b76-b544-319d99b84791";
+      fsType = "ext4";
+      options = [ "noatime" ];
+    };
 
   nixpkgs.hostPlatform.system = "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = true;

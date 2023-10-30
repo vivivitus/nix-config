@@ -14,5 +14,6 @@
     gparted
     telegram-desktop
     spotify
+    libreoffice
   ];
 }

@@ -10,7 +10,6 @@ in {
     useDHCP = false;
     interfaces.br0.useDHCP = true;
     interfaces.admin.useDHCP = true;
-    interfaces.server.useDHCP = true;
 
     dhcpcd.extraConfig =
       ''
