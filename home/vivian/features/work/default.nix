@@ -11,5 +11,8 @@
     freecad
     kicad
     rpi-imager
+    nextcloud-client
+    pdfarranger
+    gnucash
   ];
 }
