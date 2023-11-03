@@ -7,6 +7,7 @@
     ./python.nix
     ./steam-hardware.nix
     ./timezone.nix
+    ./sound.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager.extraSpecialArgs = { inherit inputs outputs; };

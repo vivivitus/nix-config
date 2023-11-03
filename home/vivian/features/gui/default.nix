@@ -15,5 +15,6 @@
     telegram-desktop
     spotify
     libreoffice
+    vlc
   ];
 }

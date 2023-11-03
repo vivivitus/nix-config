@@ -8,7 +8,7 @@
   ];
 
   home.packages = with pkgs; [
-    freecad
+    # freecad
     kicad
     rpi-imager
     nextcloud-client
