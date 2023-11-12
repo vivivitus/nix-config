@@ -32,6 +32,19 @@
   #   analogioOffset = -40;
   # };
 
+  # hardware.usb-modeswitch.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    usb-modeswitch
+    usb-modeswitch-data
+    modemmanager
+    modem-manager-gui
+  ];
+
+  services.udev.extraRules = ''
+    # Your rule goes here
+  '';
+
   services = {
     
     xserver = {
