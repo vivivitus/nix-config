@@ -10,5 +10,6 @@
     libusb
     libusb1
     pciutils
+    pmbootstrap
   ];
 }

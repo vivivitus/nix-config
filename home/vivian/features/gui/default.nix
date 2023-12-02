@@ -16,5 +16,6 @@
     spotify
     libreoffice
     vlc
+    freecad
   ];
 }

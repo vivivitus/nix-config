@@ -36,7 +36,7 @@
       vlan = {
         interface-name = "vlan_admin";
         parent = "bridge_default";
-        id = "4";
+        id = "1";
       };
     };
   };
