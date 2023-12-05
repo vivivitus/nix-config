@@ -5,7 +5,7 @@
     inputs.hardware.nixosModules.common-pc-ssd
 
     ./hardware-configuration.nix
-    # ./networking.nix
+    #./networking.nix
     ./networkmanager.nix
     ../common/global
     ../common/user/vivian

@@ -2,8 +2,20 @@
 {
   networking.hostName = "vividesk";
 
+  programs.kdeconnect.enable = true;
+
   networking.networkmanager.enable = true;
   networking.networkmanager.ensureProfiles.profiles = {
+
+    bridge_port_1 = {
+      connection = {
+        id = "Default Bridge Slave";
+        type = "ethernet";
+        interface-name = "enp9s0";
+        master = "bridge_default";
+        slave-type = "bridge";
+      };
+    };
 
     bridge_default = {
       connection = {
@@ -16,16 +28,16 @@
       bridge = {
         interface-name = "bridge_default";
       };
-    };
-
-    bridge_port_1 = {
-      connection = {
-        id = "Default Bridge Slave";
-        type = "ethernet";
-        master = "bridge_default";
-        slave-type = "bridge";
+      ipv4 = {
+        method = "auto";
+        route-metric = "101";
+      };
+      ipv6 = {
+        method = "auto";
+        route-metric = "100";
       };
     };
+
     vlan_admin = {
       connection = {
         id = "Administration VLAN";
@@ -37,6 +49,14 @@
         interface-name = "vlan_admin";
         parent = "bridge_default";
         id = "1";
+      };
+      ipv4 = {
+        method = "auto";
+        route-metric = "201";
+      };
+      ipv6 = {
+        method = "auto";
+        route-metric = "200";
       };
     };
   };

@@ -19,14 +19,15 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
-    let
-      inherit (self) outputs;
-      lib = nixpkgs.lib // home-manager.lib;
-      architectures = [ "x86_64-linux" "aarch64-linux" ];
-      perArchitecture = f: lib.genAttrs architectures (arch: f packageArchitecture.${arch});
-      packageArchitecture = nixpkgs.legacyPackages;
-    in
-    {
+
+  let
+    inherit (self) outputs;
+    lib = nixpkgs.lib // home-manager.lib;
+    architectures = [ "x86_64-linux" "aarch64-linux" ];
+    perArchitecture = f: lib.genAttrs architectures (arch: f packageArchitecture.${arch});
+    packageArchitecture = nixpkgs.legacyPackages;
+  in
+  {
     inherit lib;
 
     nixosModules = import ./modules/nixos;
