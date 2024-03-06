@@ -12,6 +12,8 @@
 
   home-manager.extraSpecialArgs = { inherit inputs outputs; };
 
+  services.flatpak.enable = true;
+
   nixpkgs = {
     #overlays = builtins.attrValues outputs.overlays;
     config = {
@@ -19,6 +21,4 @@
     };
   };
   hardware.enableRedistributableFirmware = true;
-
-  
 }

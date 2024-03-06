@@ -5,14 +5,16 @@
     ./evolution.nix
     ./vscode.nix
     ./wireshark.nix
+    ./3d-printing.nix
+    ./kicad.nix
   ];
 
   home.packages = with pkgs; [
     freecad
-    kicad
     rpi-imager
     nextcloud-client
     pdfarranger
     gnucash
+    gmsh
   ];
 }

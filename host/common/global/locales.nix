@@ -1,6 +1,6 @@
 {
   
-  services.xserver.layout = "ch";
+  services.xserver.xkb.layout = "ch";
   console.keyMap = "sg";
   
   i18n = {

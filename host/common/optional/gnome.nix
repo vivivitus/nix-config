@@ -32,6 +32,7 @@
       epiphany
       geary
       cheese
+      gvfs
       gnome-calculator
       gnome-characters
       gnome-weather

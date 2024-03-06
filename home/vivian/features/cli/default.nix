@@ -11,5 +11,6 @@
     libusb1
     pciutils
     pmbootstrap
+    appimage-run
   ];
 }
