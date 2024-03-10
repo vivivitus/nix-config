@@ -41,9 +41,7 @@
     modem-manager-gui
   ];
 
-  services.udev.extraRules = ''
-    # Your rule goes here
-  '';
+  services.audio-send.enable = true;
 
   services = {
     
