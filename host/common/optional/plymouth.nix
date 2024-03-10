@@ -4,6 +4,6 @@
     consoleLogLevel = 0;
     initrd.verbose = false;
     kernelParams = [ "quiet" ];
-    loader.timeout = 0;
+    loader.timeout = 10;
   };
 }

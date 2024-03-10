@@ -16,9 +16,22 @@
     ../common/virtualisation/bottles.nix
   ];
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   };
+
+  hardware.opengl.extraPackages = with pkgs; [
+    amdvlk
+  ];
+  # For 32 bit applications 
+  hardware.opengl.extraPackages32 = with pkgs; [
+    driversi686Linux.amdvlk
+  ];
+
+  hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true; # This is already enabled by default
+  hardware.opengl.driSupport32Bit = true; # For 32 bit applications
+
 }
