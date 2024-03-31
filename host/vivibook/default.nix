@@ -4,7 +4,7 @@
     inputs.hardware.nixosModules.common-gpu-intel
     inputs.hardware.nixosModules.common-pc-ssd
 
-    ./hardware-configuration.nix
+    ./storage.nix
     ./networking.nix
     ../common/global
     ../common/user/vivian
@@ -13,14 +13,30 @@
     ../common/optional/plymouth.nix
   ];
 
-  system.stateVersion = "23.11";
+
+  nixpkgs.hostPlatform.system = "x86_64-linux";
+  system.stateVersion = "24.05";
+
+  hardware.cpu.intel.updateMicrocode = true;
+  powerManagement.cpuFreqGovernor = "powersave";
 
   boot = {
-    loader.systemd-boot.enable = true;
-    loader.systemd-boot.configurationLimit = 3;
-    loader.efi.canTouchEfiVariables = true;
-    kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [ "iomem=relaxed" ];
+    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    kernelModules = [ "kvm-intel" ];
+    kernelParams = [ "iomem=relaxed" "i915.force_probe=a7a0" "i915.enable_guc=2" ];
+    extraModulePackages = [ ];
+
+    initrd = {
+      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "sd_mod" ];
+      kernelModules = [ ];
+      luks.devices."root".device = "/dev/disk/by-uuid/fd20514c-b8b7-48ca-ac37-5f7460c8565f";
+    };
+
+    loader = {
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 50;
+      efi.canTouchEfiVariables = true;
+    };
   };
 
   # services.undervolt = {
@@ -33,15 +49,6 @@
   # };
 
   # hardware.usb-modeswitch.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    usb-modeswitch
-    usb-modeswitch-data
-    modemmanager
-    modem-manager-gui
-  ];
-
-  services.audio-send.enable = true;
 
   services = {
     

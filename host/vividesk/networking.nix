@@ -1,58 +1,59 @@
 {
   networking.hostName = "vividesk";
-  
-  # Opens firewall ports UDP 1714 to 1764
-  programs.kdeconnect.enable = true;
 
-  # Disable networkmanager management of wired interfaces
-  networking = {
-    networkmanager.unmanaged = [
-      "br0"
-      "admin"
-      "enp9s0"
-    ];
-  };
+  networking.networkmanager.enable = true;
+  networking.networkmanager.ensureProfiles.profiles = {
 
-  systemd.network.enable = true;
-  systemd.network = {
-    netdevs = {
-      "10-bridge-default" = {
-        netdevConfig = {
-          Kind = "bridge";
-          Name = "br0";
-        };
-      };
-      "10-vlan-admin" = {
-        netdevConfig = {
-          Kind = "vlan";
-          Name = "admin";
-        };
-        vlanConfig.Id = 1;
+    bridge_port_1 = {
+      connection = {
+        id = "Default Bridge Slave";
+        type = "ethernet";
+        interface-name = "enp9s0";
+        master = "bridge_default";
+        slave-type = "bridge";
       };
     };
 
-    networks = {
-      "20-bridge-default-bind" = {
-        matchConfig.Name = "enp9s0";
-        networkConfig.Bridge = "br0";
-        linkConfig.RequiredForOnline = "enslaved";
-        vlan = [ "admin" ];
+    bridge_default = {
+      connection = {
+        id = "Default Bridge";
+        uuid = "e291db52-cd82-3bf3-9fed-79563b909738";
+        interface-name = "bridge_default";
+        type = "bridge";
+        autoconnect = "false";
       };
-      "30-wired" = {
-        matchConfig.Name = "br0";
-        dhcpV4Config = { RouteMetric = 100; };
-        dhcpV6Config = { RouteMetric = 100; };
-        networkConfig.DHCP = "ipv4";
-        networkConfig.IPv6AcceptRA = true;
-        networkConfig.IPv6PrivacyExtensions = true;
+      bridge = {
+        interface-name = "bridge_default";
       };
-      "40-vlan-admin" = {
-        matchConfig.Name = "admin";
-        dhcpV4Config = { RouteMetric = 200; };
-        dhcpV6Config = { RouteMetric = 200; };
-        networkConfig.DHCP = "ipv4";
-        networkConfig.IPv6AcceptRA = true;
-        networkConfig.IPv6PrivacyExtensions = true;
+      ipv4 = {
+        method = "auto";
+        route-metric = "101";
+      };
+      ipv6 = {
+        method = "auto";
+        route-metric = "100";
+      };
+    };
+
+    vlan_admin = {
+      connection = {
+        id = "Administration VLAN";
+        uuid = "fe6b48da-c2b2-3a2f-a4dc-e6fe0c7b504e";
+        interface-name = "vlan_admin";
+        type = "vlan";
+      };
+      vlan = {
+        interface-name = "vlan_admin";
+        parent = "bridge_default";
+        id = "1";
+      };
+      ipv4 = {
+        method = "auto";
+        route-metric = "201";
+      };
+      ipv6 = {
+        method = "auto";
+        route-metric = "200";
       };
     };
   };

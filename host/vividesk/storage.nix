@@ -1,27 +1,11 @@
 {
-  imports =
-    [];
-
-  boot = {  
-    initrd = {
-      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "sd_mod" ];
-      kernelModules = [ "amdgpu" "dm-snapshot" ];
-    };
-    kernelModules = [ "kvm-amd" ];
-    extraModulePackages = [ ];
-    swraid = {
-      enable = true;
-      mdadmConf = ''
-        DEVICE partitions
-        MAILADDR vivian@vivi.land
-        ARRAY /dev/md/data metadata=1.2 name=vividesk:data UUID=c7ca0418:4c1ba1e5:70133e1c:3fe6a572
-      '';
-    };
-    loader = {
-      systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 50;
-      efi.canTouchEfiVariables = true;
-    };
+  boot.swraid = {
+    enable = true;
+    mdadmConf = ''
+      DEVICE partitions
+      MAILADDR vivian@vivi.land
+      ARRAY /dev/md/data metadata=1.2 name=vividesk:data UUID=c7ca0418:4c1ba1e5:70133e1c:3fe6a572
+    '';
   };
 
   fileSystems."/" =
@@ -60,7 +44,4 @@
       fsType = "ext4";
       options = [ "noatime" ];
     };
-
-  nixpkgs.hostPlatform.system = "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = true;
 }

@@ -7,7 +7,7 @@ in
     isNormalUser = true;
     extraGroups = [
       "wheel"
-      "network"
+      "networkmanager"
       "video"
       "audio"
       "lp"

@@ -12,5 +12,7 @@
     pciutils
     pmbootstrap
     appimage-run
+    flatpak
+    gnome.gnome-software
   ];
 }

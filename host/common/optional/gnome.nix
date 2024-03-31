@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  programs.kdeconnect.enable = true;
+
   services = {
     udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
     xserver = {

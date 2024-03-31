@@ -1,3 +1,3 @@
-{ pkgs ? import <nixpkgs> { } }: rec {
-  "./gst-send.nix"
+{ pkgs ? import <nixpkgs> { } }: {
+  
 }

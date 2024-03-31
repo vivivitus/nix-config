@@ -10,7 +10,6 @@
   home.packages = with pkgs; [
     discord
     easyeffects
-    etcher
     gparted
     telegram-desktop
     spotify
