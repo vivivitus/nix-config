@@ -21,7 +21,14 @@
   hardware.cpu.amd.updateMicrocode = true;
   hardware.enableAllFirmware = true;
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.powerOnBoot = false;
+
+  services.ratbagd.enable = true;
+
+  # does not work
+  services.xserver.deviceSection = ''
+    Option "VariableRefresh" "true"
+  '';
   
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
@@ -46,5 +53,12 @@
     driSupport32Bit = true;
     extraPackages = with pkgs; [ amdvlk ];
     extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
+  };
+  
+  programs = {
+    corectrl = {
+      enable = true;
+      gpuOverclock.ppfeaturemask = "0xffffffff";
+    };
   };
 }

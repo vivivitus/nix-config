@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./global
@@ -10,5 +12,9 @@
   home.sessionVariables = {
     XDG_RUNTIME_DIR = "/run/user/$UID";
   };
+
+  home.packages = with pkgs; [
+    piper
+  ];
 
 }
