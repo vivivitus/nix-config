@@ -10,15 +10,15 @@ in
     gnomeExtensions.forge
     gnomeExtensions.caffeine
     gnomeExtensions.gsconnect
-    gnomeExtensions.switch-workspaces-on-active-monitor
+   # gnomeExtensions.switch-workspaces-on-active-monitor
   ];
 
   dconf.settings = {
 
     # does not work
-    "org/gnome/mutter" = {
-      experimental-features = [ "variable-refresh-rate" ];
-    };
+    # "org/gnome/mutter" = {
+    #   experimental-features = [ "variable-refresh-rate" ];
+    # };
 
     "org/gnome/desktop/peripherals/touchpad" = {
       natural-scroll = false;
@@ -48,7 +48,7 @@ in
         "forge@jmmaranan.com"
         "caffeine@patapon.info"
         "gsconnect@andyholmes.github.io"
-        "simulate-switching-workspaces-on-active-monitor@micheledaros.com"
+        #"simulate-switching-workspaces-on-active-monitor@micheledaros.com"
         #"tiling-assistant@leleat-on-github"
         ];
     };

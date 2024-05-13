@@ -3,7 +3,7 @@
 {
   # falscher ort, nur zum test
   programs.kdeconnect.enable = true;
-  programs.xwayland.enable = true;
+  #programs.xwayland.enable = true;
 
   services = {
     udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
