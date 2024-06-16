@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-intel
-    inputs.hardware.nixosModules.common-gpu-intel
+   # inputs.hardware.nixosModules.common-gpu-intel
     inputs.hardware.nixosModules.common-pc-ssd
 
     ./storage.nix
@@ -11,6 +11,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix
+    ../common/optional/adb-rules.nix
   ];
 
 
@@ -51,16 +52,13 @@
   # hardware.usb-modeswitch.enable = true;
 
   services = {
-    
-    xserver = {
 
-      libinput = {
-        enable = true;
-        mouse.accelProfile = "flat";
-        touchpad = {
-          clickMethod = "clickfinger";
-          accelSpeed = "-0.15";
-        };
+    libinput = {
+      enable = true;
+      mouse.accelProfile = "flat";
+      touchpad = {
+        clickMethod = "clickfinger";
+        accelSpeed = "-0.15";
       };
     };
   };
