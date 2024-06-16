@@ -12,9 +12,13 @@
   home.packages = with pkgs; [
     freecad
     rpi-imager
+    rpiboot
     nextcloud-client
     pdfarranger
     gnucash
     gmsh
+    darktable
+    gimp
+    inkscape
   ];
 }
