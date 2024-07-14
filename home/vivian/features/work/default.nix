@@ -6,11 +6,10 @@
     ./vscode.nix
     ./wireshark.nix
     ./3d-printing.nix
-    ./kicad.nix
+    #./kicad.nix
   ];
 
   home.packages = with pkgs; [
-    freecad
     rpi-imager
     rpiboot
     nextcloud-client

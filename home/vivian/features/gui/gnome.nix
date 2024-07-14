@@ -5,7 +5,7 @@ let
 in
 {
   home.packages = with pkgs; [
-    gnome.dconf-editor
+    dconf-editor
     gnomeExtensions.appindicator
     gnomeExtensions.forge
     gnomeExtensions.caffeine

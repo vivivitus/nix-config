@@ -31,13 +31,13 @@
 
     gnome.excludePackages = (with pkgs; [
       gnome-tour
-          ]) ++ (with pkgs.gnome; [
       yelp
       epiphany
       geary
       cheese
-      gvfs
       gnome-calculator
+          ]) ++ (with pkgs.gnome; [
+      gvfs
       gnome-characters
       gnome-weather
       gnome-clocks
