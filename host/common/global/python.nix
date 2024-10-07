@@ -1,8 +1,11 @@
 { pkgs, ... }:
 
-{
-    environment.systemPackages = [
-      pkgs.python3
-      pkgs.python311Packages.gmsh
+let
+  python-pkgs = ps: with ps; [
+    gmsh
+  ];
+in {
+  environment.systemPackages = [
+    (pkgs.python3.withPackages python-pkgs)
   ];
 }

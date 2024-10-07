@@ -25,7 +25,7 @@
 
   environment = {
     systemPackages = with pkgs; [
-      gnome.gnome-color-manager
+      gnome-color-manager
       evolution
     ];
 
@@ -36,11 +36,13 @@
       geary
       cheese
       gnome-calculator
-          ]) ++ (with pkgs.gnome; [
       gvfs
       gnome-characters
       gnome-weather
       gnome-clocks
-    ]);
+          ]);
+    #        ++ (with pkgs; [
+
+    # ]);
   };
 }
