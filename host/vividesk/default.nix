@@ -72,4 +72,7 @@
       python3Packages = final.python3.pkgs;
     })
   ];
+  services.udev.packages = [ pkgs.picoscope.rules ];
+  users.groups.pico = {};
+  users.users.vivian.extraGroups = [ "pico" ];
 }

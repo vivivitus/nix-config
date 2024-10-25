@@ -5,7 +5,7 @@
     ./evolution.nix
     ./vscode.nix
     ./3d-printing.nix
-    #./kicad.nix
+    ./kicad.nix
   ];
 
   home.packages = with pkgs; [
@@ -18,5 +18,7 @@
     darktable
     gimp
     inkscape
+    mono
+    picoscope
   ];
 }
