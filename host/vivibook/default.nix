@@ -6,12 +6,15 @@
 
     ./storage.nix
     ./networking.nix
+    ./hibernate.nix
     ../common/global
     ../common/user/vivian
     ../common/optional/pipewire.nix
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix
     ../common/optional/adb-rules.nix
+    ../common/optional/network-diag.nix
+    ../common/optional/steam.nix
   ];
 
 
@@ -35,7 +38,7 @@
 
     loader = {
       systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 50;
+      systemd-boot.configurationLimit = 10;
       efi.canTouchEfiVariables = true;
     };
   };
@@ -65,5 +68,9 @@
 
   environment.sessionVariables = {
     STEAM_FORCE_DESKTOPUI_SCALING = "2";
+  };
+
+  environment.sessionVariables = {
+    QT_AUTO_SCREEN_SCALE_FACTOR = "auto";
   };
 }

@@ -4,7 +4,6 @@
   imports = [
     ./evolution.nix
     ./vscode.nix
-    ./wireshark.nix
     ./3d-printing.nix
     #./kicad.nix
   ];

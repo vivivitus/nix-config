@@ -7,7 +7,6 @@
     ncdu
     tree
     usbutils
-    libusb
     libusb1
     pciutils
     pmbootstrap

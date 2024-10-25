@@ -5,7 +5,6 @@
     ./global
     ./features/gui
     ./features/work
-    ./features/gaming
   ];
 
   # Versuch "gkr-pam: unable to locate daemon control file" zu beheben
