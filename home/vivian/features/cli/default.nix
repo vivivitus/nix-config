@@ -12,6 +12,6 @@
     pmbootstrap
     appimage-run
     flatpak
-    gnome.gnome-software
+    gnome-software
   ];
 }
