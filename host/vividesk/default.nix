@@ -11,6 +11,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix
+    ../common/optional/steam.nix
     ../common/virtualisation/libvirt.nix
     ../common/virtualisation/bottles.nix
   ];
@@ -31,8 +32,8 @@
   # '';
   
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-    kernelModules = [ "kvm-amd" "btusb" "btintel" ];
+    kernelPackages = pkgs.linuxKernel.packages.linux_testing;
+    kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
 
     initrd = {
