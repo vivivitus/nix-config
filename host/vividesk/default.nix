@@ -32,7 +32,7 @@
   # '';
   
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_testing;
+    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
 
@@ -50,8 +50,8 @@
 
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [ amdvlk ];
-    extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
+    #extraPackages = with pkgs; [ amdvlk ];
+    #extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
   };
   
   programs = {

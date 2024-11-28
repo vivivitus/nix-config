@@ -16,30 +16,30 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/c3ee3185-cea5-441f-ad17-8fa5fc7e1708";
+    { device = "/dev/disk/by-uuid/6b29879b-436e-4dba-8a60-1531aec89584";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/c3ee3185-cea5-441f-ad17-8fa5fc7e1708";
+    { device = "/dev/disk/by-uuid/6b29879b-436e-4dba-8a60-1531aec89584";
       fsType = "btrfs";
       options = [ "subvol=home" "compress=zstd" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/c3ee3185-cea5-441f-ad17-8fa5fc7e1708";
+    { device = "/dev/disk/by-uuid/6b29879b-436e-4dba-8a60-1531aec89584";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1292-7B5C";
+    { device = "/dev/disk/by-uuid/82F9-0797";
       fsType = "vfat";
     };
 
   fileSystems."/swap" =
-    { device = "/dev/disk/by-uuid/c3ee3185-cea5-441f-ad17-8fa5fc7e1708";
+    { device = "/dev/disk/by-uuid/6b29879b-436e-4dba-8a60-1531aec89584";
       fsType = "btrfs";
       options = [ "subvol=swap" ];
     };

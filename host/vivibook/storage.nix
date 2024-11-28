@@ -5,6 +5,12 @@
   #   [ (modulesPath + "/installer/scan/not-detected.nix")
   #   ];
 
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "daily";
+    fileSystems = [ "/" ];
+  };
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/1fadc7e9-a139-4580-b358-729ecf16d071";
       fsType = "btrfs";
