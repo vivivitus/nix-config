@@ -47,6 +47,11 @@
         modules = [ ./host/vivibook ];
         specialArgs = { inherit inputs outputs; };
       };
+
+      crapbook = lib.nixosSystem {
+        modules = [ ./host/crapbook ];
+        specialArgs = { inherit inputs outputs; };
+      };
     };
 
     homeConfigurations = {
@@ -58,6 +63,12 @@
 
       "vivian@vivibook" = lib.homeManagerConfiguration {
         modules = [ ./home/vivian/vivibook.nix ];
+        pkgs = packageArchitecture.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+
+      "vivian@crapbook" = lib.homeManagerConfiguration {
+        modules = [ ./home/vivian/crapbook.nix ];
         pkgs = packageArchitecture.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
