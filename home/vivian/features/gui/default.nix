@@ -15,6 +15,6 @@
     spotify
     libreoffice
     vlc
-    exodus
+    #exodus #can not be automatically installed
   ];
 }

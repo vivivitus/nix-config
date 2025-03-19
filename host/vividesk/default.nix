@@ -12,6 +12,7 @@
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix
     ../common/optional/steam.nix
+    ../common/optional/home-assistant.nix
     ../common/virtualisation/libvirt.nix
     ../common/virtualisation/bottles.nix
   ];
