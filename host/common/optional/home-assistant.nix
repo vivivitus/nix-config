@@ -7,7 +7,7 @@
     homeassistant = config.services.home-assistant.enable;
     permit_join = true;
     mqtt = {
-      server = "mqtt://10.0.2.10:1883"
+      server = "mqtt://10.0.2.10:1883";
     };
     serial = {
       port = "/dev/ttyACM0";
@@ -31,6 +31,8 @@
       # Includes dependencies for a basic setup
       # https://www.home-assistant.io/integrations/default_config/
       default_config = {};
+      automation = "!include automations.yaml";
+      sensor = "!include sensor.yaml";
     };
   };
 }
