@@ -18,6 +18,7 @@
       gnome-settings-daemon.enable = true;
       gnome-online-accounts.enable = true;
       gnome-keyring.enable = true;
+      evolution-data-server.enable = true;
     };
     
     colord.enable = true;
