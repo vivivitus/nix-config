@@ -12,8 +12,8 @@
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix
     ../common/optional/steam.nix
-    ../common/optional/docker.nix
-    ../common/optional/home-assistant.nix
+    #../common/optional/docker.nix
+    #../common/optional/home-assistant.nix
     ../common/virtualisation/libvirt.nix
     ../common/virtualisation/bottles.nix
   ];
@@ -78,4 +78,7 @@
   services.udev.packages = [ pkgs.picoscope.rules ];
   users.groups.pico = {};
   users.users.vivian.extraGroups = [ "pico" ];
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="2207", MODE="0666",GROUP="plugdev"
+  '';
 }

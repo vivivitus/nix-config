@@ -13,5 +13,7 @@
     appimage-run
     flatpak
     gnome-software
+    gnumake
+    rkdeveloptool
   ];
 }

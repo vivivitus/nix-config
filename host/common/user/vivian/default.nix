@@ -19,6 +19,7 @@ in
       "deluge"
       "wireshark"
       "libvirtd"
+      # "docker"
       # geht nicht hoi
     ];
 
