@@ -8,7 +8,6 @@
   services = {
     udev.packages = with pkgs; [ gnome-settings-daemon ];
     xserver = {
-      enable = true;
       desktopManager.gnome.enable = true;
       displayManager.gdm.enable = true;
       excludePackages = [ pkgs.xterm ];

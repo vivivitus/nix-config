@@ -81,4 +81,5 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="2207", MODE="0666",GROUP="plugdev"
   '';
+  nixpkgs.config.allowBroken = true;
 }

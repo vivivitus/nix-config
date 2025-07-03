@@ -13,12 +13,13 @@
     #rpiboot
     nextcloud-client
     pdfarranger
-    gnucash
+    #gnucash
     gmsh
     darktable
     gimp
     inkscape
     mono
     picoscope
+    picocom
   ];
 }

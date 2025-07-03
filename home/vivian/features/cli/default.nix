@@ -11,9 +11,9 @@
     pciutils
     pmbootstrap
     appimage-run
-    flatpak
     gnome-software
     gnumake
     rkdeveloptool
+    libusb1
   ];
 }

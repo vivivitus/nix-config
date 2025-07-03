@@ -7,7 +7,7 @@ let
     matplotlib
     scipy
     pyqt5
-    pyside2
+    #pyside2 # shiboken2 errors occured
   ];
 in {
   environment.systemPackages = [

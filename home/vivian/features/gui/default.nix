@@ -9,7 +9,7 @@
 
   home.packages = with pkgs; [
     discord
-    #easyeffects #removed due to php-simplexml build error
+    easyeffects
     gparted
     telegram-desktop
     spotify
