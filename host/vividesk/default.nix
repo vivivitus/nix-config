@@ -45,13 +45,14 @@
 
     loader = {
       systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 50;
+      systemd-boot.configurationLimit = 10;
       efi.canTouchEfiVariables = true;
     };
   };
 
-  hardware.graphics = {
-    enable = true;
+  hardware = {
+    graphics.enable = true;
+    amdgpu.overdrive.ppfeaturemask = "0xffffffff";
     #extraPackages = with pkgs; [ amdvlk ];
     #extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
   };
@@ -59,7 +60,6 @@
   programs = {
     corectrl = {
       enable = true;
-      gpuOverclock.ppfeaturemask = "0xffffffff";
     };
   };
 
