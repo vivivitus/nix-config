@@ -15,11 +15,12 @@
     pdfarranger
     #gnucash
     gmsh
-    #darktable
+    darktable
     gimp
     inkscape
     mono
     picoscope
     picocom
+    freecad
   ];
 }
