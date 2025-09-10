@@ -22,5 +22,6 @@
     picoscope
     picocom
     freecad
+    libredwg
   ];
 }

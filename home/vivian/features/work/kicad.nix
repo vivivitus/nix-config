@@ -5,5 +5,6 @@
     kicad
     kicadAddons.kikit-library
     kikit
+    easyeda2kicad
   ];
 }
