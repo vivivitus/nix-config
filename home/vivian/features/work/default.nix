@@ -23,5 +23,6 @@
     picocom
     freecad
     libredwg
+    notepadqq
   ];
 }

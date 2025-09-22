@@ -34,25 +34,25 @@
       };
     };
 
-    vlan_admin = {
-      connection = {
-        id = "Administration VLAN";
-        interface-name = "vlan_admin";
-        type = "vlan";
-      };
-      vlan = {
-        interface-name = "vlan_admin";
-        parent = "bridge_default";
-        id = "1";
-      };
-      ipv4 = {
-        method = "auto";
-        route-metric = "201";
-      };
-      ipv6 = {
-        method = "auto";
-        route-metric = "200";
-      };
-    };
+    # vlan_admin = {
+    #   connection = {
+    #     id = "Administration VLAN";
+    #     interface-name = "vlan_admin";
+    #     type = "vlan";
+    #   };
+    #   vlan = {
+    #     interface-name = "vlan_admin";
+    #     parent = "bridge_default";
+    #     id = "1";
+    #   };
+    #   ipv4 = {
+    #     method = "auto";
+    #     route-metric = "201";
+    #   };
+    #   ipv6 = {
+    #     method = "auto";
+    #     route-metric = "200";
+    #   };
+    # };
   };
 }

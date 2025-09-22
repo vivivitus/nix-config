@@ -18,7 +18,7 @@
       {
         name = "Brother_DCP-7065DN_IPP";
         location = "Home";
-        deviceUri = "ipp://192.168.1.30";
+        deviceUri = "ipp://10.0.1.30";
         model = "drv:///brlaser.drv/br7065d.ppd";
         ppdOptions = {
           PageSize = "A4";
@@ -38,7 +38,7 @@
       {
         name = "Brother_DCP-7065DN_LPD";
         location = "Home";
-        deviceUri = "lpd://192.168.1.30//BINARY_P1";
+        deviceUri = "lpd://10.0.1.30//BINARY_P1";
         model = "drv:///brlaser.drv/br7065d.ppd";
         ppdOptions = {
           PageSize = "A4";
@@ -54,7 +54,7 @@
       brscan4 = {
         enable = true;
         netDevices = {
-          DCP-7065DN = { model = "DCP-7065DN"; ip = "192.168.1.30"; };
+          DCP-7065DN = { model = "DCP-7065DN"; ip = "10.0.1.30"; };
         };
       };
     };
