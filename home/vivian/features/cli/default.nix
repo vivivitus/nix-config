@@ -15,5 +15,6 @@
     gnumake
     rkdeveloptool
     libusb1
+    fido2-manage
   ];
 }
