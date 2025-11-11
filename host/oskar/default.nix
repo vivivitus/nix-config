@@ -7,6 +7,7 @@
     ./networking.nix
     ../common/global
     ../common/user/vivian
+    ../common/optional/ssh.nix
   ];
 
   nixpkgs.hostPlatform.system = "x86_64-linux";
