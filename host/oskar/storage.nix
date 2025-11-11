@@ -26,7 +26,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/29ce79e8-e901-4ff9-9dff-5a714f9a1641";
+    { device = "/dev/disk/by-uuid/A2A9-D620";
       fsType = "btrfs";
     };
 
