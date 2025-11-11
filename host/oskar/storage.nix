@@ -8,30 +8,31 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/29ce79e8-e901-4ff9-9dff-5a714f9a1641";
+    { device = "/dev/disk/by-uuid/1e593f43-20e1-435e-be33-1fdfaf696e9a";
       fsType = "btrfs";
-      options = [ "subvol=root" ];
+      options = [ "subvol=root" "compress=zstd" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/29ce79e8-e901-4ff9-9dff-5a714f9a1641";
+    { device = "/dev/disk/by-uuid/1e593f43-20e1-435e-be33-1fdfaf696e9a";
       fsType = "btrfs";
-      options = [ "subvol=home" ];
+      options = [ "subvol=home" "compress=zstd" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/29ce79e8-e901-4ff9-9dff-5a714f9a1641";
+    { device = "/dev/disk/by-uuid/1e593f43-20e1-435e-be33-1fdfaf696e9a";
       fsType = "btrfs";
-      options = [ "subvol=nix" ];
+      options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/A2A9-D620";
-      fsType = "btrfs";
+    { device = "/dev/disk/by-uuid/DE19-2968";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   fileSystems."/swap" =
-    { device = "/dev/disk/by-uuid/29ce79e8-e901-4ff9-9dff-5a714f9a1641";
+    { device = "/dev/disk/by-uuid/1e593f43-20e1-435e-be33-1fdfaf696e9a";
       fsType = "btrfs";
       options = [ "subvol=swap" ];
     };
