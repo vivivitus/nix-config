@@ -10,6 +10,7 @@
     ../common/global
     ../common/user/vivian
     ../common/optional/pipewire.nix
+    ../common/optional/printing.nix
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix
     ../common/optional/adb-rules.nix

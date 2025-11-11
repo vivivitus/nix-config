@@ -40,7 +40,7 @@
     nixosConfigurations = {
       vividesk = lib.nixosSystem {
         modules = [ ./host/vividesk ];
-        specialArgs = { inherit inputs outputs; }; # wenn das fehlt infinit loop?
+        specialArgs = { inherit inputs outputs; };
       };
 
       vivibook = lib.nixosSystem {
@@ -50,6 +50,11 @@
 
       crapbook = lib.nixosSystem {
         modules = [ ./host/crapbook ];
+        specialArgs = { inherit inputs outputs; };
+      };
+
+      oskar = lib.nixosSystem {
+        modules = [ ./host/oskar ];
         specialArgs = { inherit inputs outputs; };
       };
     };
@@ -69,6 +74,12 @@
 
       "vivian@crapbook" = lib.homeManagerConfiguration {
         modules = [ ./home/vivian/crapbook.nix ];
+        pkgs = packageArchitecture.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+
+      "vivian@oskar" = lib.homeManagerConfiguration {
+        modules = [ ./home/vivian/oskar.nix ];
         pkgs = packageArchitecture.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
