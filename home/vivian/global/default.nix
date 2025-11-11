@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./git.nix
     ../features/cli
   ] ++ (builtins.attrValues outputs.homeManagerModules);
 

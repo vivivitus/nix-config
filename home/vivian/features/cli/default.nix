@@ -11,7 +11,6 @@
     pciutils
     pmbootstrap
     appimage-run
-    gnome-software
     gnumake
     rkdeveloptool
     libusb1
