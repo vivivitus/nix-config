@@ -19,8 +19,6 @@ in
       "deluge"
       "wireshark"
       "libvirtd"
-      # "docker"
-      # geht nicht hoi
     ];
 
     packages = [ pkgs.home-manager ];
