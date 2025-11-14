@@ -3,7 +3,6 @@
     inputs.home-manager.nixosModules.home-manager
     ./locales.nix
     ./nix.nix
-    ./vscode.nix
     ./timezone.nix
   ] ++ (builtins.attrValues outputs.nixosModules);
 
