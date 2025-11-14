@@ -10,8 +10,6 @@
     ../common/optional/ssh.nix
   ];
 
-  programs.nix-ld.enable = true;
-
   nixpkgs.hostPlatform.system = "x86_64-linux";
   system.stateVersion = "25.05";
 
