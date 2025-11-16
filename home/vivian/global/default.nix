@@ -34,7 +34,7 @@
   home = {
     username = lib.mkDefault "vivian";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
-    stateVersion = lib.mkDefault "23.11";
+    stateVersion = lib.mkDefault "25.05";
     sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
       FLAKE = "$HOME/Documents/nix-config";
