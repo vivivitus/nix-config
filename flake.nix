@@ -4,12 +4,11 @@
   inputs = {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     hardware.url = "github:nixos/nixos-hardware";
     sops-nix.url = "github:mic92/sops-nix";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -53,11 +52,6 @@
         modules = [ ./host/crapbook ];
         specialArgs = { inherit inputs outputs; };
       };
-
-      oskar = lib.nixosSystem {
-        modules = [ ./host/oskar ];
-        specialArgs = { inherit inputs outputs; };
-      };
     };
 
     homeConfigurations = {
@@ -78,15 +72,6 @@
         pkgs = packageArchitecture.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
-
-      "vivian@oskar" = lib.homeManagerConfiguration {
-        modules = [ ./home/vivian/oskar.nix ];
-        pkgs = packageArchitecture.x86_64-linux;
-        extraSpecialArgs = { inherit inputs outputs; };
-      };
     };
   };
 }
-
-# important: initialize home manager config with:
-# home-manager switch --flake .#username@hostname
