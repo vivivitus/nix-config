@@ -19,12 +19,10 @@ in
       "deluge"
       "wireshark"
       "libvirtd"
-      # "docker"
-      # geht nicht hoi
     ];
 
     packages = [ pkgs.home-manager ];
   };
 
-  home-manager.users.vivian = import ../../../../home/vivian/${config.networking.hostName}.nix;
+  #home-manager.users.vivian = import ../../../../home/vivian/${config.networking.hostName}.nix;
 }

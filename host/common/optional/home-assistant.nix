@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 
 {
   networking.firewall.allowedTCPPorts = [ 8123 ];

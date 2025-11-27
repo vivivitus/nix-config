@@ -7,7 +7,7 @@
 
   services.btrfs.autoScrub = {
     enable = true;
-    interval = "daily";
+    interval = "weekly";
     fileSystems = [ "/" ];
   };
 

@@ -3,7 +3,7 @@
 
   inputs = {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     hardware.url = "github:nixos/nixos-hardware";
     sops-nix.url = "github:mic92/sops-nix";
 
@@ -40,7 +40,7 @@
     nixosConfigurations = {
       vividesk = lib.nixosSystem {
         modules = [ ./host/vividesk ];
-        specialArgs = { inherit inputs outputs; }; # wenn das fehlt infinit loop?
+        specialArgs = { inherit inputs outputs; };
       };
 
       vivibook = lib.nixosSystem {

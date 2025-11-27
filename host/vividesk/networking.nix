@@ -8,7 +8,7 @@
       connection = {
         id = "Default Bridge Slave";
         type = "ethernet";
-        interface-name = "enp9s0";
+        interface-name = "enp2s0f0u3c2";
         master = "bridge_default";
         slave-type = "bridge";
       };
