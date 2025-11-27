@@ -13,8 +13,10 @@
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix
     ../common/optional/adb-rules.nix
-    ../common/optional/network-diag.nix
+    #../common/optional/network-diag.nix
     ../common/optional/steam.nix
+    ../common/virtualisation/libvirt.nix
+
   ];
 
 

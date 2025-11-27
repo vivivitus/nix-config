@@ -14,6 +14,10 @@
 
   services.flatpak.enable = true;
 
+  nix.settings = {
+    download-buffer-size = 524288000; # 500 MiB
+  };
+
   nixpkgs = {
     #overlays = builtins.attrValues outputs.overlays;
     config = {
