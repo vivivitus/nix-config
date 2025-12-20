@@ -3,12 +3,12 @@
 {
   programs.git = {
     enable = true;
-    userName  = "vivivitus";
-    userEmail = "vivi_vitus@hotmail.com";
-    extraConfig = {
+    settings = {
+      user.name  = "vivivitus";
+      user.email = "vivi_vitus@hotmail.com";
       credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
+        pkgs.git.override { withLibsecret = true; }
+      }/bin/git-credential-libsecret";
     };
   };
 }

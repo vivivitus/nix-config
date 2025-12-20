@@ -10,7 +10,7 @@
   ];
 
   home.packages = with pkgs; [
-    rpi-imager
+    #rpi-imager
     #rpiboot
     nextcloud-client
     pdfarranger
@@ -24,6 +24,6 @@
     picocom
     freecad
     libredwg
-    notepadqq
+    gnucash
   ];
 }

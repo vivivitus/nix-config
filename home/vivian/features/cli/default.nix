@@ -14,5 +14,8 @@
     rkdeveloptool
     libusb1
     fido2-manage
+    #exfat
+    exfatprogs
+    nix-tree
   ];
 }
