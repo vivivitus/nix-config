@@ -15,7 +15,7 @@
     ../common/optional/printing.nix
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix
-    ../common/optional/adb-rules.nix
+    #../common/optional/adb-rules.nix
     #../common/optional/network-diag.nix
     ../common/optional/steam.nix
     ../common/virtualisation/libvirt.nix
@@ -36,7 +36,7 @@
     extraModulePackages = [ ];
 
     initrd = {
-      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "sd_mod" ];
+      availableKernelModules = [ "i915" "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "sd_mod" ];
       kernelModules = [ ];
       luks.devices."root".device = "/dev/disk/by-uuid/fd20514c-b8b7-48ca-ac37-5f7460c8565f";
     };
