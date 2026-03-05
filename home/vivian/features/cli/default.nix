@@ -17,5 +17,6 @@
     #exfat
     exfatprogs
     nix-tree
+    kubectl
   ];
 }

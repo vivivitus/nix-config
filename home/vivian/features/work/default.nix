@@ -25,5 +25,6 @@
     freecad
     libredwg
     gnucash
+    stm32cubemx
   ];
 }

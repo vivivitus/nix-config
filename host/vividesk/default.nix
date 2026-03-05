@@ -16,7 +16,6 @@
     ../common/optional/plymouth.nix
     ../common/optional/steam.nix
     #../common/optional/docker.nix
-    #../common/optional/home-assistant.nix
     ../common/virtualisation/libvirt.nix
     ../common/virtualisation/bottles.nix
   ];
@@ -35,7 +34,10 @@
   # services.xserver.deviceSection = ''
   #   Option "VariableRefresh" "true"
   # '';
-  
+
+  services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     kernelModules = [ "kvm-amd" ];
@@ -54,10 +56,11 @@
   };
 
   hardware = {
-    graphics.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
     amdgpu.overdrive.ppfeaturemask = "0xffffffff";
-    #extraPackages = with pkgs; [ amdvlk ];
-    #extraPackages32 = with pkgs; [ driversi686Linux.amdvlk ];
   };
   
   programs = {
