@@ -7,6 +7,11 @@
     direnv
   ];
 
+  programs.vscode.package = pkgs.vscode.fhsWithPackages (ps: with ps; [ 
+    openocd
+    gcc-arm-embedded
+  ]);
+
   programs.vscode = {
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [

@@ -16,35 +16,39 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/6b29879b-436e-4dba-8a60-1531aec89584";
+    { device = "/dev/disk/by-uuid/9ba30658-dba5-40b6-8126-04220245fe91";
       fsType = "btrfs";
-      options = [ "subvol=root" "compress=zstd" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/6b29879b-436e-4dba-8a60-1531aec89584";
-      fsType = "btrfs";
-      options = [ "subvol=home" "compress=zstd" ];
-    };
-
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/6b29879b-436e-4dba-8a60-1531aec89584";
-      fsType = "btrfs";
-      options = [ "subvol=nix" "compress=zstd" "noatime" ];
+      options = [ "subvol=root" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/82F9-0797";
+    { device = "/dev/disk/by-uuid/7D01-47E4";
       fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/9ba30658-dba5-40b6-8126-04220245fe91";
+      fsType = "btrfs";
+      options = [ "subvol=home" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/9ba30658-dba5-40b6-8126-04220245fe91";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
     };
 
   fileSystems."/swap" =
-    { device = "/dev/disk/by-uuid/6b29879b-436e-4dba-8a60-1531aec89584";
+    { device = "/dev/disk/by-uuid/9ba30658-dba5-40b6-8126-04220245fe91";
       fsType = "btrfs";
       options = [ "subvol=swap" ];
     };
 
-  swapDevices = [ { device = "/swap/swapfile"; } ];
+  swapDevices = [{
+    device = "/swap/swapfile";
+    size = 32*1024;
+  }];
 
   fileSystems."/home/vivian/Archive" =
     { device = "/dev/disk/by-uuid/6c40eb20-2aaf-4b76-b544-319d99b84791";

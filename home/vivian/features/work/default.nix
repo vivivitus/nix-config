@@ -22,9 +22,10 @@
     mono
     picoscope
     picocom
-    freecad
     libredwg
     gnucash
     stm32cubemx
+    stlink-tool
+    stlink-gui
   ];
 }

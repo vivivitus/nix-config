@@ -6,7 +6,7 @@
   #programs.xwayland.enable = true;
 
   # network sharing via DAV
-  services.spice-webdavd.enable = true;
+  services.gnome.gnome-user-share.enable = true;
 
   # some programs crash on open file
   environment.extraInit = ''
@@ -61,8 +61,8 @@
 
   services = {
     udev.packages = with pkgs; [ gnome-settings-daemon ];
-    xserver.desktopManager.gnome.enable = true;
-    xserver.displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
     xserver = {
       excludePackages = [ pkgs.xterm ];
     };

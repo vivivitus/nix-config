@@ -10,6 +10,7 @@ in
     gnomeExtensions.forge
     gnomeExtensions.caffeine
     gnomeExtensions.gsconnect
+    gnomeExtensions.freon
    # gnomeExtensions.switch-workspaces-on-active-monitor
   ];
 
@@ -48,8 +49,7 @@ in
         "forge@jmmaranan.com"
         "caffeine@patapon.info"
         "gsconnect@andyholmes.github.io"
-        #"simulate-switching-workspaces-on-active-monitor@micheledaros.com"
-        #"tiling-assistant@leleat-on-github"
+        "freon@UshakovVasilii_Github.yahoo.com"
         ];
     };
 

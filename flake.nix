@@ -33,6 +33,7 @@
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home-manager;
     
+    overlays = import ./overlays {inherit inputs outputs;};
     packages = perArchitecture (pkgs: import ./pkgs { inherit pkgs; });
     #devShells = perArchitecture (pkgs: import ./shell.nix { inherit pkgs; });
     #formatter = perArchitecture (pkgs: pkgs.nixpkgs-fmt);

@@ -13,7 +13,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
     ../common/optional/gnome.nix
-    ../common/optional/plymouth.nix
+    #../common/optional/plymouth.nix
     ../common/optional/steam.nix
     #../common/optional/docker.nix
     ../common/virtualisation/libvirt.nix
@@ -39,9 +39,13 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    #kernelPackages = pkgs.linuxKernel.packages.linux_zen;
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
+
+    kernelParams = [ 
+      "acpi_enforce_resources=lax"
+    ];
 
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "sd_mod" ];
@@ -50,7 +54,8 @@
 
     loader = {
       systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 10;
+      systemd-boot.configurationLimit = 5;
+      systemd-boot.memtest86.enable = true;
       efi.canTouchEfiVariables = true;
     };
   };
@@ -86,6 +91,7 @@
   users.users.vivian.extraGroups = [ "pico" ];
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="2207", MODE="0666",GROUP="plugdev"
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0483", MODE="0666",GROUP="plugdev"
   '';
   nixpkgs.config.allowBroken = true;
 }

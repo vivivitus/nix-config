@@ -7,12 +7,17 @@
     extraConfig = "DNSOverTLS=no";
   };
 
+  services.openssh = {
+    enable = true;
+  };
+
   networking = {
     useDHCP = lib.mkDefault true;
     hostName = "vivibook";
   };
 
   networking.firewall.allowedUDPPorts = [51820];
+  networking.firewall.allowedTCPPorts = [22];
 
     networking.firewall = {
    # if packets are still dropped, they will show up in dmesg
