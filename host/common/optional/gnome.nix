@@ -5,9 +5,6 @@
   programs.kdeconnect.enable = true;
   #programs.xwayland.enable = true;
 
-  # network sharing via DAV
-  services.gnome.gnome-user-share.enable = true;
-
   # some programs crash on open file
   environment.extraInit = ''
     export XDG_DATA_DIRS="$XDG_DATA_DIRS:${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}"
@@ -68,6 +65,9 @@
     };
 
     gnome = {
+      # network sharing via DAV
+      gnome-user-share.enable = true;
+
       gnome-settings-daemon.enable = true;
       gnome-online-accounts.enable = true;
       gnome-keyring.enable = true;

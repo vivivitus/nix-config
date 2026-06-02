@@ -7,7 +7,7 @@ in
   home.packages = with pkgs; [
     dconf-editor
     gnomeExtensions.appindicator
-    gnomeExtensions.forge
+    gnomeExtensions.tiling-shell
     gnomeExtensions.caffeine
     gnomeExtensions.gsconnect
     gnomeExtensions.freon
@@ -46,10 +46,10 @@ in
       disable-user-extensions = false;
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
-        "forge@jmmaranan.com"
         "caffeine@patapon.info"
         "gsconnect@andyholmes.github.io"
         "freon@UshakovVasilii_Github.yahoo.com"
+        "tilingshell@ferrarodomenico.com"
         ];
     };
 
