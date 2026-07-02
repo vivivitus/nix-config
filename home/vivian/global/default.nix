@@ -13,11 +13,6 @@
     };
   };
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-12.2.3"
-    "electron-19.1.9"
-  ];
-
   nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {
@@ -33,7 +28,6 @@
   home = {
     username = lib.mkDefault "vivian";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
-    stateVersion = lib.mkDefault "26.05";
     sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
       FLAKE = "$HOME/Documents/nix-config";

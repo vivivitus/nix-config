@@ -61,6 +61,11 @@
         modules = [ ./host/crapbook ];
         specialArgs = { inherit inputs outputs; };
       };
+
+      sopinian = lib.nixosSystem {
+        modules = [ ./host/sopinian ];
+        specialArgs = { inherit inputs outputs; };
+      };
     };
 
     homeConfigurations = {
@@ -78,6 +83,12 @@
 
       "vivian@crapbook" = lib.homeManagerConfiguration {
         modules = [ ./home/vivian/crapbook.nix ];
+        pkgs = packageArchitecture.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+
+      "vivian@sopinian" = lib.homeManagerConfiguration {
+        modules = [ ./home/vivian/sopinian.nix ];
         pkgs = packageArchitecture.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
