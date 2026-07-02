@@ -5,6 +5,7 @@
     inputs.hardware.nixosModules.common-pc-ssd
 
     ./storage.nix
+    ./lm_sensors.nix
     ./networking.nix
     ../common/global
     ../common/user/vivian
@@ -39,8 +40,8 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   boot = {
-    #kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-    kernelModules = [ "kvm-amd" ];
+    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    kernelModules = [ "kvm-amd" "nct6775" ];
     extraModulePackages = [ ];
 
     kernelParams = [ 
@@ -74,18 +75,6 @@
     };
   };
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      python3 = prev.python3.override {
-        packageOverrides = pfinal: pprev: {
-          debugpy = pprev.debugpy.overrideAttrs (oldAttrs: {
-            pytestCheckPhase = "true";
-          });
-        };
-      };
-      python3Packages = final.python3.pkgs;
-    })
-  ];
   services.udev.packages = [ pkgs.picoscope.rules ];
   users.groups.pico = {};
   users.users.vivian.extraGroups = [ "pico" ];

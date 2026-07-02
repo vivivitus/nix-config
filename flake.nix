@@ -4,8 +4,16 @@
   inputs = {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-    hardware.url = "github:nixos/nixos-hardware";
-    sops-nix.url = "github:mic92/sops-nix";
+
+    hardware = {
+      url = "github:nixos/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";

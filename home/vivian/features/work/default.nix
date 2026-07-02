@@ -23,7 +23,7 @@
     picoscope
     picocom
     libredwg
-    gnucash
+    # gnucash
     stm32cubemx
     stlink-tool
     stlink-gui

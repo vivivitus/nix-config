@@ -1,4 +1,4 @@
-{ pkgs, inputs, outputs, ... }: {
+{ inputs, outputs, ... }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./locales.nix
@@ -16,11 +16,4 @@
   };
   hardware.enableRedistributableFirmware = true;
   hardware.enableAllFirmware = true;
-
-  environment.systemPackages = with pkgs; [
-    lm_sensors
-    nvme-cli
-    smartmontools
-    udisks2
-  ];
 }
