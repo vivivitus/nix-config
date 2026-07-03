@@ -1,5 +1,8 @@
-{ config, osConfig, ... }:
+{ config, hostName, ... }:
 
+let
+  hostname = builtins.getEnv "HOSTNAME";
+in
 {
   programs.git = {
     enable = true;
@@ -18,7 +21,6 @@
     settings = {
       "github.com" = {
         HostName = "github.com";
-        IdentityFile = "~/.ssh/%u@\${HOSTNAME}";
         IdentitiesOnly = "yes";
       };
     };
