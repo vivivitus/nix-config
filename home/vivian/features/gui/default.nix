@@ -15,6 +15,7 @@
     spotify
     libreoffice
     vlc
+    synergy
     #exodus #can not be automatically installed
   ];
 }

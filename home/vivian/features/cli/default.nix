@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./bash.nix
+    ./git.nix
   ];
   home.packages = with pkgs; [
     ncdu

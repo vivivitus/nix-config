@@ -6,7 +6,6 @@
     ./vscode.nix
     ./3d-printing.nix
     ./kicad.nix
-    ./git.nix
   ];
 
   home.packages = with pkgs; [
