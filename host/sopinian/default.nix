@@ -8,6 +8,7 @@
 
     ./storage.nix
     ./networking.nix
+    ./nix-ld.nix
     ../common/global
     ../common/user/vivian
     ../common/optional/pipewire.nix
