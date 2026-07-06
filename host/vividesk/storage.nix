@@ -12,15 +12,6 @@
     interval = "weekly";
   };
 
-  boot.swraid = {
-    enable = true;
-    mdadmConf = ''
-      DEVICE partitions
-      MAILADDR vivian@vivi.land
-      ARRAY /dev/md/data metadata=1.2 name=vividesk:data UUID=c7ca0418:4c1ba1e5:70133e1c:3fe6a572
-    '';
-  };
-
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/9ba30658-dba5-40b6-8126-04220245fe91";
       fsType = "btrfs";
