@@ -1,5 +1,12 @@
 {
 
+  # hide raid volumes in nautilus
+  services.udev.extraRules = ''
+    ENV{ID_SERIAL}=="ST5000LM000-2U8170_WCJC4KQB", ENV{UDISKS_IGNORE}="1"
+    ENV{ID_SERIAL}=="ST5000LM000-2U8170_WCJC3SG9", ENV{UDISKS_IGNORE}="1"
+    ENV{ID_SERIAL}=="ST5000LM000-2AN170_WCJ1SKQJ", ENV{UDISKS_IGNORE}="1"
+  '';
+
   services.btrfs.autoScrub = {
     enable = true;
     interval = "weekly";
@@ -50,8 +57,8 @@
   }];
 
   fileSystems."/home/vivian/Archive" =
-    { device = "/dev/disk/by-uuid/6c40eb20-2aaf-4b76-b544-319d99b84791";
-      fsType = "ext4";
+    { device = "/dev/sdb";
+      fsType = "btrfs";
       options = [ "noatime" ];
     };
 }
