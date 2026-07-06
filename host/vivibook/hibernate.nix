@@ -8,11 +8,11 @@
 
   boot.resumeDevice = "/dev/disk/by-uuid/1fadc7e9-a139-4580-b358-729ecf16d071";
 
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=yes
-    AllowHibernation=yes
-    AllowHybridSleep=yes
-    AllowSuspendThenHibernate=yes
-    HibernateDelaySec=1800
-  '';
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = true;
+    AllowHibernation = true;
+    AllowHybridSleep = true;
+    AllowSuspendThenHibernate = true;
+    HibernateDelaySec = "30m";
+  };
 }
