@@ -8,10 +8,14 @@
     ./kicad.nix
   ];
 
+  services.nextcloud-client = {
+    enable = true;
+    startInBackground = true;
+  };
+
   home.packages = with pkgs; [
     #rpi-imager
     #rpiboot
-    nextcloud-client
     pdfarranger
     #gnucash
     gmsh

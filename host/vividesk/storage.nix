@@ -24,7 +24,7 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/9ba30658-dba5-40b6-8126-04220245fe91";
       fsType = "btrfs";
-      options = [ "subvol=root" ];
+      options = [ "subvol=root" "compress=zstd:1" ];
     };
 
   fileSystems."/boot" =
@@ -36,13 +36,13 @@
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/9ba30658-dba5-40b6-8126-04220245fe91";
       fsType = "btrfs";
-      options = [ "subvol=home" ];
+      options = [ "subvol=home" "compress=zstd:1" ];
     };
 
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/9ba30658-dba5-40b6-8126-04220245fe91";
       fsType = "btrfs";
-      options = [ "subvol=nix" ];
+      options = [ "subvol=nix" "compress=zstd:1" "noatime" ];
     };
 
   fileSystems."/swap" =
@@ -59,6 +59,6 @@
   fileSystems."/home/vivian/Archive" =
     { device = "/dev/sdb";
       fsType = "btrfs";
-      options = [ "noatime" ];
+      options = [ "noatime" "compress-force=zstd:5" ];
     };
 }
