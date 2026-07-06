@@ -30,7 +30,7 @@
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-    kernelModules = [ "kvm-amd" ];
+    kernelModules = [ "kvm-amd" "nct6775" ];
     extraModulePackages = [ ];
 
     kernelParams = [ 
