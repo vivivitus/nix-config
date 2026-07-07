@@ -16,11 +16,6 @@ in
 
   dconf.settings = {
 
-    # does not work
-    # "org/gnome/mutter" = {
-    #   experimental-features = [ "variable-refresh-rate" ];
-    # };
-
     "org/gnome/desktop/peripherals/touchpad" = {
       natural-scroll = false;
       tap-to-click = true;

@@ -8,10 +8,10 @@
 
     ./storage.nix
     ./networking.nix
-    ./nix-ld.nix
     ./lm_sensors.nix
     ../common/global
     ../common/user/vivian
+    ../common/optional/nix-ld.nix
     ../common/optional/pipewire.nix
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix

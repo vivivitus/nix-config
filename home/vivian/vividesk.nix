@@ -3,7 +3,8 @@
     ./global
     ./features/gui
     ./features/work
-    ./features/cli/ssh/vividesk.nix
+    ./features/virtualisation/virt-manager.nix
+    ./features/cli/ssh/rothstrasse.nix
   ];
 
   home.stateVersion = "24.05";
