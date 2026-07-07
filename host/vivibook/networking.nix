@@ -4,7 +4,7 @@
   services.resolved = {
     enable = true;
     dnssec = "false";
-    extraConfig = "DNSOverTLS=no";
+    settings.Resolve.DNSOverTLS = false;
   };
 
   services.openssh = {
@@ -16,6 +16,14 @@
     hostName = "vivibook";
   };
 
+  networking.networkmanager = {
+    enable = true;
+    plugins = [ pkgs.networkmanager-openvpn ];
+  };
+
+  networking.firewall.checkReversePath = "loose";
+
+  networking.firewall.trustedInterfaces = [ "viviland" ];
   networking.firewall.allowedUDPPorts = [51820];
   networking.firewall.allowedTCPPorts = [22];
 
