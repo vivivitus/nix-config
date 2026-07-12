@@ -12,7 +12,6 @@
     gparted
     telegram-desktop
     spotify
-    libreoffice
     vlc
     #exodus #can not be automatically installed
   ];

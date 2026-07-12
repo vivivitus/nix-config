@@ -30,5 +30,6 @@
     stm32cubemx
     stlink-tool
     stlink-gui
+    libreoffice
   ];
 }
