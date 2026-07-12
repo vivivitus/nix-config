@@ -4,42 +4,33 @@
     enableDefaultConfig = false;
 
     settings = {
+      "n1" = {
+        hostname = "10.0.2.50";
+        user = "vivian";
+      };
 
-      "github.com".IdentityFile = "/home/vivian/.ssh/vivian@vividesk";
+      "n2" = {
+        hostname = "10.0.2.51";
+        user = "vivian";
+      };
+
+      "n3" = {
+        hostname = "10.0.2.52";
+        user = "vivian";
+      };
+
+      "nix-init" = {
+        hostname = "nix-init.lan";
+        user = "vivian";
+      };
 
       "oskar" = {
-        host = "oskar";
         hostname = "oskar.lan";
         user = "vivian";
       };
 
       "sopinian" = {
-        host = "sopinian";
         hostname = "sopinian.lan";
-        user = "vivian";
-      };
-
-      "nix-init" = {
-        host = "nix-init";
-        hostname = "nix-init.lan";
-        user = "vivian";
-      };
-
-      "n1" = {
-        host = "n1";
-        hostname = "n1.lan";
-        user = "vivian";
-      };
-
-      "n2" = {
-        host = "n2";
-        hostname = "n2.lan";
-        user = "vivian";
-      };
-
-      "n3" = {
-        host = "n3";
-        hostname = "n3.lan";
         user = "vivian";
       };
     };

@@ -8,10 +8,12 @@
       connection = {
         id = "Default Bridge Slave";
         type = "ethernet";
-        interface-name = "enp2s0f0u3c2";
+        interface-name = "enp4s0";
         master = "bridge_default";
         slave-type = "bridge";
       };
+      ipv4 = { method = "disabled"; };
+      ipv6 = { method = "disabled"; };
     };
 
     bridge_default = {
@@ -19,10 +21,11 @@
         id = "Default Bridge";
         interface-name = "bridge_default";
         type = "bridge";
-        autoconnect = "false";
+        autoconnect = "true";
       };
       bridge = {
         interface-name = "bridge_default";
+        stp = "false"; 
       };
       ipv4 = {
         method = "auto";
@@ -31,28 +34,13 @@
       ipv6 = {
         method = "auto";
         route-metric = "100";
+        accept-ra = "2";
+        addr-gen-mode = "stable-privacy";
       };
     };
-
-    # vlan_admin = {
-    #   connection = {
-    #     id = "Administration VLAN";
-    #     interface-name = "vlan_admin";
-    #     type = "vlan";
-    #   };
-    #   vlan = {
-    #     interface-name = "vlan_admin";
-    #     parent = "bridge_default";
-    #     id = "1";
-    #   };
-    #   ipv4 = {
-    #     method = "auto";
-    #     route-metric = "201";
-    #   };
-    #   ipv6 = {
-    #     method = "auto";
-    #     route-metric = "200";
-    #   };
-    # };
+  };
+  boot.kernel.sysctl = {
+    "net.ipv6.conf.bridge_default.accept_ra" = 2;
+    "net.ipv6.conf.enp4s0.accept_ra" = 2;
   };
 }

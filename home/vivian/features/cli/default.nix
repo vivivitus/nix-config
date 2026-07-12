@@ -19,5 +19,7 @@
     exfatprogs
     nix-tree
     kubectl
+    sops
+    age
   ];
 }
