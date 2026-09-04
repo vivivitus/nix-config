@@ -1,4 +1,10 @@
-{ pkgs, inputs, modulesPath, ... }: {
+{
+  pkgs,
+  inputs,
+  modulesPath,
+  ...
+}:
+{
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-gpu-amd
@@ -11,6 +17,7 @@
     ./networking.nix
     ../common/global
     ../common/user/vivian
+    ../common/optional/nix-ld.nix
     ../common/optional/python.nix
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
@@ -19,7 +26,10 @@
     ../common/optional/steam.nix
     ../common/virtualisation/libvirt.nix
     ../common/virtualisation/bottles.nix
+    ../common/virtualisation/virtualbox.nix
   ];
+
+  services.fwupd.enable = true;
 
   nixpkgs.hostPlatform.system = "x86_64-linux";
   system.stateVersion = "24.05";
@@ -33,16 +43,29 @@
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-    kernelModules = [ "kvm-amd" "nct6775" ];
+    kernelModules = [
+      "kvm-amd"
+      "nct6775"
+    ];
     extraModulePackages = [ ];
 
-    kernelParams = [ 
+    kernelParams = [
       "acpi_enforce_resources=lax"
     ];
 
     initrd = {
-      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "uas" "usb_storage" "sd_mod" ];
-      kernelModules = [ "amdgpu" "dm-snapshot" ];
+      availableKernelModules = [
+        "nvme"
+        "xhci_pci"
+        "ahci"
+        "uas"
+        "usb_storage"
+        "sd_mod"
+      ];
+      kernelModules = [
+        "amdgpu"
+        "dm-snapshot"
+      ];
     };
 
     loader = {
@@ -66,7 +89,7 @@
     };
     amdgpu.overdrive.ppfeaturemask = "0xffffffff";
   };
-  
+
   programs = {
     corectrl = {
       enable = true;

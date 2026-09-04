@@ -6,6 +6,7 @@
     ./vscode.nix
     ./3d-printing.nix
     ./kicad.nix
+    ./masterpdfeditor.nix
   ];
 
   services.nextcloud-client = {
@@ -30,5 +31,6 @@
     stm32cubemx
     stlink-tool
     stlink-gui
+    libreoffice
   ];
 }

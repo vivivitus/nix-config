@@ -1,7 +1,9 @@
 {
   imports = [
-    ./global
-    ./features/gui
+    ../common/global
+    ../common/features/gui
+    ../common/features/social
+    ../common/features/work/vscode.nix
   ];
 
   home.stateVersion = "26.05";

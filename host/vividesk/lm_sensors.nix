@@ -8,7 +8,6 @@
   ];
 
   environment.etc."sensors.d/asrock-b550.conf".text = ''
-    # Finale, fehlerfreie lm_sensors Konfiguration für ASRock B550M-ITX/ac & AMD GPU
 
     # ====================================================================
     # MAINBOARD: Nuvoton Chip

@@ -1,4 +1,10 @@
-{ pkgs, inputs, modulesPath, ... }: {
+{
+  pkgs,
+  inputs,
+  modulesPath,
+  ...
+}:
+{
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-gpu-amd
@@ -8,10 +14,10 @@
 
     ./storage.nix
     ./networking.nix
-    ./nix-ld.nix
     ./lm_sensors.nix
     ../common/global
     ../common/user/vivian
+    ../common/optional/nix-ld.nix
     ../common/optional/pipewire.nix
     ../common/optional/gnome.nix
     ../common/optional/plymouth.nix
@@ -30,15 +36,25 @@
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-    kernelModules = [ "kvm-amd" "nct6775" ];
+    kernelModules = [
+      "kvm-amd"
+      "nct6775"
+    ];
     extraModulePackages = [ ];
 
-    kernelParams = [ 
+    kernelParams = [
       "acpi_enforce_resources=lax"
     ];
 
     initrd = {
-      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+      availableKernelModules = [
+        "nvme"
+        "xhci_pci"
+        "ahci"
+        "usbhid"
+        "usb_storage"
+        "sd_mod"
+      ];
       kernelModules = [ "amdgpu" ];
     };
 

@@ -11,15 +11,10 @@ in
     gnomeExtensions.caffeine
     gnomeExtensions.gsconnect
     gnomeExtensions.freon
-   # gnomeExtensions.switch-workspaces-on-active-monitor
+    # gnomeExtensions.switch-workspaces-on-active-monitor
   ];
 
   dconf.settings = {
-
-    # does not work
-    # "org/gnome/mutter" = {
-    #   experimental-features = [ "variable-refresh-rate" ];
-    # };
 
     "org/gnome/desktop/peripherals/touchpad" = {
       natural-scroll = false;
@@ -27,7 +22,12 @@ in
     };
 
     "org/gnome/desktop/input-sources" = {
-      sources = [ (mkTuple [ "xkb" "ch" ]) ];
+      sources = [
+        (mkTuple [
+          "xkb"
+          "ch"
+        ])
+      ];
     };
 
     "org/gnome/system/location" = {
@@ -50,7 +50,7 @@ in
         "gsconnect@andyholmes.github.io"
         "freon@UshakovVasilii_Github.yahoo.com"
         "tilingshell@ferrarodomenico.com"
-        ];
+      ];
     };
 
     "org/gnome/nautilus/preferences" = {
@@ -68,7 +68,12 @@ in
     };
 
     "org/gnome/desktop/app-folders" = {
-      folder-children = ["Utilities" "YaST" "Games" "KDEConnect" ];
+      folder-children = [
+        "Utilities"
+        "YaST"
+        "Games"
+        "KDEConnect"
+      ];
     };
 
     "org/gnome/desktop/app-folders/folders/Games" = {
