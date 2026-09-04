@@ -7,6 +7,7 @@
     ./storage.nix
     ./networking.nix
     ./hibernate.nix
+    ./sensors.nix
     ../common/global
     ../common/user/vivian
     ../common/optional/python.nix
