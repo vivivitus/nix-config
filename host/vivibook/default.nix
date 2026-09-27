@@ -19,7 +19,7 @@
     #../common/optional/network-diag.nix
     ../common/optional/steam.nix
     ../common/virtualisation/libvirt.nix
-
+    ../common/virtualisation/virtualbox.nix
   ];
 
   nixpkgs.hostPlatform.system = "x86_64-linux";
