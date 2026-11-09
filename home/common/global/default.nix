@@ -17,6 +17,9 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
+      permittedInsecurePackages = [
+        "python3.13-pybars3-0.9.7"
+      ];
     };
   };
 
