@@ -19,7 +19,7 @@
     ../common/user/vivian
     ../common/optional/nix-ld.nix
     ../common/optional/pipewire.nix
-    ../common/optional/gnome.nix
+    ../common/optional/plasma-bigscreen.nix
     ../common/optional/plymouth.nix
     ../common/optional/steam.nix
     ../common/virtualisation/bottles.nix
